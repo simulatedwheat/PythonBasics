@@ -29,7 +29,22 @@ def FtoCMod():
         print (celsius, "Celsius converts to: ", fahrenheit, "Fahrenheit")
         celsius = celsius + 10
 
+# Modify the futureValue function to include additional yearly investments
+# The inputs will be ammount to invest every year, total years and the interest rate
 
+def futureValue():
+    print("This function calculates a future value on a yearly investment over time\n")
+    yearlyInvest = eval(input("Enter the yearly investment value: "))
+    years = eval(input("Enter the ammount of years you will be saving: "))
+    print("Interest rate: 1% = 0.01, 100% = 1")
+    interest = eval(input("Enter the interest rate: "))
+    value = 0
+    for i in range(years):
+        value = value + yearlyInvest
+        print("Just invested", yearlyInvest)
+        print("Value =", value)
+        value = value * (1 + interest)
+    print("\nThe total value after", years, "years will be:", value)
 
 
 
@@ -37,4 +52,5 @@ def FtoCMod():
 #Choose what to run
 #average()
 #FtoC()
-FtoCMod()
+#FtoCMod()
+futureValue()
