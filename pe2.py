@@ -65,6 +65,11 @@ def KGtoLBS():
     lbs = kg * 2.2046
     print(kg, "kg converts to: ", lbs, "lbs")
 
+def calculator():
+    for i in range(5):
+        ans = eval(input("Enter a mathematical expression: "))
+        print(ans)
+        
 
 #Choose what to run
 #average()
@@ -73,4 +78,5 @@ def KGtoLBS():
 #futureValue()
 #FtoC()
 #KilometertToMiles()
-KGtoLBS()
+#KGtoLBS()
+calculator()
