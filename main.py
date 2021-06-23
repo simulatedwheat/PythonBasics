@@ -3,10 +3,8 @@
 # A program to cover some basics of Python
 #
 # Change Log:
-#           (20210623): Added the Fahrenheit to Celsius converter
-#           (20210623): Added the chaos function
-#
-#
+#           (20210623): Added the FtoC(), chaos(), evaluate(), average(), forLoop()
+#           
 #
 
 
@@ -33,7 +31,29 @@ def evaluate():
     ans = eval(input("Enter an expression: "))
     print("Answer:", ans)
 
+
+def average():
+    print("\nThis function calculates the average of two numbers.")
+    n1, n2 = eval(input("Enter two numbers seperated by a comma: "))
+    average = (n1 + n2) / 2
+    print("The average of",n1,"+",n2,"is: ", average)
+    n3 = eval(input("Enter a number: "))
+    n4 = eval(input("Enter a number: "))
+    average2 = (n3 + n4) / 2
+    print("The average of",n3,"+",n4,"is: ", average2)
+
+def forLoop():
+    for num in range(10):
+        print(num)
+    
+
+
+
+
+
 # Choose what to run
 #FtoC()
 #chaos()
-evaluate()
+#evaluate()
+#average()
+forLoop()
