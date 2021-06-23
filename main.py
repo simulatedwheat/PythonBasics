@@ -43,8 +43,20 @@ def average():
     print("The average of",n3,"+",n4,"is: ", average2)
 
 def forLoop():
+    # Definate loop, executes 10 times (0-9)
     for num in range(10):
         print(num)
+    
+def futureValue():
+    print("This function calculates a future value on an investement over x ammount of years.")
+    startVal = eval(input("Enter the starting value: "))
+    years = eval(input("Enter the ammount of years you will be saving: "))
+    interest = eval(input("Enter the interest rate: "))
+
+    for i in range(years):
+        startVal = startVal * (1 + interest)
+    print("\nThe total value after", years, "years will be:", startVal)
+
     
 
 
@@ -56,4 +68,5 @@ def forLoop():
 #chaos()
 #evaluate()
 #average()
-forLoop()
+#forLoop()
+futureValue()
