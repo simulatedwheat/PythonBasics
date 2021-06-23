@@ -69,7 +69,29 @@ def calculator():
     for i in range(5):
         ans = eval(input("Enter a mathematical expression: "))
         print(ans)
-        
+
+def choose():
+    print("1 = average\n2 = CtoF\n3 = CtoFMod\n4 = futureValue\n5 = FtoC\n6 = KilometerToMiles\n7 = KGtoLBS\n8 = calculator")
+    ans = input("Choose which function to run: ")
+    print(ans)
+    if ans == "1":
+        average()
+    elif ans == "2":
+        CtoF()
+    elif ans == "3":
+        CtoFMod()
+    elif ans == "4":
+        futureValue()
+    elif ans == "5":
+        FtoC()
+    elif ans == "6":
+        KilometertToMiles()
+    elif ans == "7":
+        KGtoLBS()
+    elif ans == "8":
+        calculator()
+    else:
+        exit()        
 
 #Choose what to run
 #average()
@@ -79,4 +101,5 @@ def calculator():
 #FtoC()
 #KilometertToMiles()
 #KGtoLBS()
-calculator()
+#calculator()
+choose()
