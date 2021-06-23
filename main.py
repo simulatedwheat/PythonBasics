@@ -10,7 +10,7 @@
 
 
 # Fahrenheit to Celsius converter
-def FtoC():
+def CtoF():
     print ("This program converts temperature from celsius to fahrenheit\n")
     # eval() is used when the input is a number, it turns the string "32" into the number 32
     celsius = eval(input("Enter the temperature in Celsius: "))
@@ -64,7 +64,7 @@ def futureValue():
 
 
 # Choose what to run
-#FtoC()
+#CtoF()
 #chaos()
 #evaluate()
 #average()
