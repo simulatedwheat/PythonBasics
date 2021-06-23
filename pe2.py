@@ -59,6 +59,12 @@ def KilometertToMiles():
     miles = km / 1.609
     print(km, "kilometers converts to", miles, "miles")
 
+def KGtoLBS():
+    print("This function converts kilograms to pounds")
+    kg = eval(input("Enter the weight in kilograms: "))
+    lbs = kg * 2.2046
+    print(kg, "kg converts to: ", lbs, "lbs")
+
 
 #Choose what to run
 #average()
@@ -66,4 +72,5 @@ def KilometertToMiles():
 #CtoFMod()
 #futureValue()
 #FtoC()
-KilometertToMiles()
+#KilometertToMiles()
+KGtoLBS()
