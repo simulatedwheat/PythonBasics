@@ -12,5 +12,7 @@ def FtoC():
     print ("This program converts temperature from celsius to fahrenheit\n")
     celsius = eval(input("Enter the temperature in Celsius: "))
     fahrenheit = 9/5 * celsius + 32
-    print (celsius, "Celsius, converts to: ", fahrenheit, "Fahrenheit")
+    print (celsius, "Celsius converts to: ", fahrenheit, "Fahrenheit")
 
+# Choose what to run
+FtoC()
