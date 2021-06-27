@@ -117,9 +117,44 @@ def investmentChart2():
     input("Press <Enter> to quit")
     win.close()
 
+def click():
+    print("Opens a window which gets the pixels where you click 10 times")
+    win = GraphWin("Click Me!")
+    for i in range(10):
+        pixel = win.getMouse()
+        print("You clicked at:", pixel.getX(), pixel.getY())
+
+def triangle():
+    print("This function will let the user draw a triangle by clicking")
+    win = GraphWin("Draw a Triangle")
+    win.setCoords(0.0, 0.0, 10.0, 10.0)
+    message = Text(Point(5, 0.5), "Click on three points")
+    message.draw(win)
+    # Get and draw three vertices of a triangle
+    p1 = win.getMouse()
+    p1.draw(win)
+    p2 = win.getMouse()
+    p2.draw(win)
+    p3 = win.getMouse()
+    p3.draw(win)
+    # Use polygon object to draw the triangle
+    # The polygon class can draw any multi-sided, closed shape, it accepts any
+    # number of points and connects them in the order given
+    triangle = Polygon(p1,p2,p3)
+    triangle.setFill("peachpuff")
+    triangle.setOutline("cyan")
+    triangle.setWidth(2)
+    triangle.draw(win)
+    # Wait for another click to exit
+    message.setText("Click anywhere to quit")
+    win.getMouse()
+
+
 # What to run
 #investmentChart()
 #ticTacToe()
-investmentChart2()
+#investmentChart2()
+#click()
+triangle()
 
 #root.mainloop()
