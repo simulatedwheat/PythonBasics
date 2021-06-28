@@ -146,15 +146,73 @@ def triangle():
     triangle.setWidth(2)
     triangle.draw(win)
     # Wait for another click to exit
-    message.setText("Click anywhere to quit")
+    message.setText("Click anywhere to quit")   # uses the same point as the message in the beginning
     win.getMouse()
 
+def clickNType():
+    win = GraphWin("Click and type", 400, 400)
+    for i in range(10):
+        pt = win.getMouse()
+        key = win.getKey()
+        label = Text(pt, key)
+        label.draw(win)
+
+def tempConverter():
+    win = GraphWin("Celsius Converter", 400,300)
+    win.setCoords(0.0, 0.0, 3.0, 4.0)
+    # Draw the interface
+    Text(Point(1,3),"    Celsius Temperature:").draw(win)
+    Text(Point(1,1), "Fahrenheit Temperature:").draw(win)
+    inputText = Entry(Point(2.25, 3), 5)
+    inputText.setText("0.0")
+    inputText.draw(win)
+    outputText = Text(Point(2.25,1), "")
+    outputText.draw(win)
+    button = Text(Point(1.5,2.0), "Convert It")
+    button.draw(win)
+    Rectangle(Point(1,1.5), Point(2,2.5)).draw(win)
+    # Wait for a mouse click
+    win.getMouse()
+    # Convert input
+    celsius = float(inputText.getText())
+    fahrenheit = 9.0/5.0 * celsius + 32
+    # Display the output and change button
+    outputText.setText(round(fahrenheit,2))
+    button.setText("Quit")
+    # Wait for click then quit
+    win.getMouse()
+    win.close()
+
+def animation():
+    win = GraphWin("Animation example", 400, 250, autoflush=False)
+    p1 = win.getMouse()
+    p1.draw(win)
+    p2 = win.getMouse()
+    p2.draw(win)
+    p3 = win.getMouse()
+    p3.draw(win)
+    for i in range(1000):
+        triangle = Polygon(p1,p2,p3)
+        triangle.setFill("peachpuff")
+        triangle.setOutline("cyan")
+        triangle.setWidth(2)
+        triangle.draw(win)
+        update(2)
+        triangle = Polygon(p1,p2,p3)
+        triangle.setFill("cyan")
+        triangle.setOutline("peachpuff")
+        triangle.setWidth(2)
+        triangle.draw(win)
+        update(2)
 
 # What to run
 #investmentChart()
 #ticTacToe()
 #investmentChart2()
 #click()
-triangle()
+#triangle()
+#clickNType()
+#tempConverter()
+animation()
 
 #root.mainloop()
