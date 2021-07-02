@@ -66,6 +66,63 @@ def numbers2Text2():
     message = "".join(chars)
     print("The decoded message is:", message)
 
+def dateConvert():
+    # Get the date
+    dateStr = input("Enter a date(mm/dd/yyyy): ")
+    # Split in to components
+    monthStr, dayStr, yearStr = dateStr.split("/")
+    # convert monthStr to month names
+    months = ["January", "February", "March", "April", "May", 
+                "June", "July", "August", "September", "October",
+                 "November", "December"]
+    monthStr = months[int(monthStr)-1]
+    # Output result in format: month, day, year
+    print("The converted date is:", monthStr, dayStr+",",yearStr)
+
+def change2():
+    print("Change Counter\n")
+    print("Please enter the count of each coin type")
+    quarters = int(input("Quarters: "))
+    dimes = int(input("Dimes: "))
+    nickels = int(input("Nickels: "))
+    pennies = int(input("Pennies: "))
+
+    total = quarters * 25 + dimes * 10 + nickels * 5 + pennies
+    print("\nThe total value of your change is ${0}.{1:0>2}"
+            .format(total//100, total%100))
+    
+def userFile():
+    print("This function creates a file of usernames from a file of names.")
+    # Get the file names
+    infileName = input("What files are the names in? ")
+    outfileName = input("What file should the usernames go in? ")
+    # Open the files
+    infile = open(infileName, "r")      # "r" is read file
+    outfile = open(outfileName, "w")    # "w" is write to file
+    # Process each line of the input file
+    for line in infile:
+        # Made a try and except since it gives a value error
+        # but still gives the correct output.
+        # This is bad practice
+        try:
+            # Get the first and last names from line
+            first, last = line.split()
+            # Create the username
+            uname = (first[0]+last[:7])
+            # Write it to the output file
+            print(uname, file=outfile)
+        except:
+            # Continues the program even though there was
+            # an error
+            pass
+            
+    # Close both files
+    infile.close()
+    outfile.close()
+    print("Usernames have been written to", outfileName)
+
+
+
 # What to run
 #username()
 #month()
@@ -73,4 +130,7 @@ def numbers2Text2():
 #text2Numbers()
 #numbers2Text()
 #squares()
-numbers2Text2()
+#numbers2Text2()
+#dateConvert()
+#change2()
+userFile()

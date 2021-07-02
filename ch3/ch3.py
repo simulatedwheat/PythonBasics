@@ -12,7 +12,7 @@ def changeCounter():
     nickels = int(input("Nickels: "))
     pennies = int(input("Pennies: "))
     total = .25*quarters + .10*dimes + .05*nickels + .01*pennies
-    print("\nThe total value of your change is: $", total)
+    print("\nThe total value of your change is ${0:0.2f}".format(total))
 
 # pq-formeln
 # import math required for this
@@ -41,6 +41,6 @@ def factorial():
 
 
 # Choose what to run
-#changeCounter()
+changeCounter()
 #quadratic()
-factorial()
+#factorial()
