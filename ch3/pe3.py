@@ -51,6 +51,6 @@ def slope():
 ####
 #volume()
 #squareInch()
-#lightningDist()
+lightningDist()
 #slope()
 #easter()
