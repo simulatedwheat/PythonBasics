@@ -77,6 +77,7 @@ def test():
     print(amounts)
 
 ####
+####
 #### Future Value
 def createLabeledWindow():
     window = GraphWin("Investment Growth Chart", 320, 240)
