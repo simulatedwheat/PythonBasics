@@ -1,4 +1,5 @@
 # Programming exercises chapter 8
+import math
 
 def fibonachi():
     n = int(input("Enter the nth number you want (negative number to quit): "))
@@ -39,8 +40,6 @@ def double_val():
 
 
 def syracuse():
-    print("This")
-
     try:
         num = int(input("Enter any positive integer: "))
         count = 0
@@ -69,10 +68,91 @@ def syracuse():
     except:
         print("\nUnkown Error")
         
+def is_prime():
+    print("Function to find all prime numbers including the input.")
+    num = int(input("Enter a number: "))
+    num_list = []
+    prime = False
+
+    for num in range(0, num + 1):
+        if num > 1:
+            # Iterate from 2 to sqrt of num
+            for i in range(2, int(math.sqrt(num)) + 1):
+                if (num % i) == 0:
+                    print(num, "is not a prime number")
+                    break
+            
+            else:
+                print(num)
+                num_list.append(num)
+                prime = True
+
+    if prime:
+        print(num_list)
+    else:
+        print(num, "is not a prime number")
+        
+# The goldbach conjecture asserts that every number is the sum of two prime numbers
+def goldbach():
+    primes = []
+    success = False
+    num = int(input("\nEnter a positive even number: "))
+    if num < 0:
+        print("\nIncorrect Input: must be positive")
+        again(goldbach)
+    elif (num % 2) != 0:
+        print("\nIncorrect Input: not an even number")
+        again(goldbach)
+    else:
+        primes = prime(num)
+        #print(primes)
+        for i in range (0,len(primes)):
+            first_num = primes[i]
+            #print("i:",primes[i])
+            for j in range (0, len(primes)):
+                #print("j",primes[j])
+                second_num = primes[j]
+                if first_num + second_num == num:
+                    success = True
+                    print("Success")
+                    print(first_num,"+",second_num,"=", num)
+                #else:
+                    #print("Fail")
+        if not success:
+            print("Something went wrong")
+        again(goldbach)
+
+def prime(num):
+    primes = []
+    prime = False
+    for num in range (0, num + 1):
+        if num > 1:
+            for i in range(2, int(math.sqrt(num)) + 1):
+                if (num % i) == 0:
+                    break
+            else:
+                primes.append(num)
+                prime = True
+
+    if prime:
+        print("There were primes")
+    else:
+        print("There were no primes")
+    return primes
+
+
+def again(function_name):
+    ans = input("Run Again? (y/n): ")
+    if "y" in ans:
+        function_name()
+    else:
+        quit()
 
 
 ####
 ####
 #fibonachi()
 #double_val()
-syracuse()
+#syracuse()
+#is_prime()
+goldbach()
