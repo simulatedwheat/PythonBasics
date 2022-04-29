@@ -91,3 +91,6 @@ def print_summary(wins_a, wins_b, shutouts_a, shutouts_b):
 # directly, and not imported
 if __name__ == '__main__':
     raquetball()
+
+
+# #8, #9, looks fun
